@@ -12,7 +12,7 @@ const dataReducer = createSlice({
     list: [],
   },
 
-  extraReducers: (build) =>
+  extraReducers: (build) => {
     build
       .addCase(dataLekeres.pending, (state) => {
         state.status = 'loading'
@@ -20,7 +20,8 @@ const dataReducer = createSlice({
       .addCase(dataLekeres.fulfilled, (state, action) => {
         state.status = 'ready'
         state.list = action.payload
-      }),
+      })
+    }
 });
 
 
